@@ -18,12 +18,12 @@ const NavBar = () => {
     const dropDownMenu = [
         {
             id: 1,
-            name: "Shop",
+            name: "Boutique",
             link: "/#",
         },
         {
             id: 2,
-            name: "About",
+            name: "A propos de nous",
             link: "/#",
         },
         {
