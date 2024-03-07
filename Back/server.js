@@ -86,9 +86,11 @@ app.get("/allmeubles", async (req, res) => {
 
 // A COMPLETER
 // Définition de la route racine ('/id') pour récupérer et renvoyer les données d'un seul meuble, en fonction de son id
-app.get("/:meubleid", async (req, res) => {
-    const data = await getMeubleData();
-    res.status(200).json(data)
+app.get("/meuble/:meubleid", async (req, res) => {
+    console.log(req.params.meubleid)
+    res.status(200).json({test:"test"})
+    // const data = await getMeubleData();
+    // res.status(200).json(data)
 })
 
 // Démarrage du serveur Express sur le port spécifié
