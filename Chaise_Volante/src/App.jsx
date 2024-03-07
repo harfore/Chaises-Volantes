@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './Componenets/Header/Header'
-import Hero from './Componenets/Hero/Hero'
-import Footer from './Componenets/Footer/Footer';
+import Footer from './Componenets/Footer/Footer'
+import MainChoice from './Componenets/MainChoice/MainChoice'
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
   return (
    <div>
     <Header />
-    <Hero />
+    <MainChoice />
     <Footer />
    </div>
   )
