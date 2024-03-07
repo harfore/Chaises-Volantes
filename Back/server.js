@@ -38,14 +38,15 @@ async function getAllMeublesData() {
 
 // A COMPLETER
 // Fonction asynchrone pour récupérer les données d'un seul meuble en fonction de son id
-async function getMeubleData() {
+async function getMeubleData(meubleId) {
     try{
         let {data, error} = await supabase
-        .from('').select('')
+        .from('Meuble').select('MeubleNom').eq('id', meubleId)
+        return data
 
     // Cette requête SQL est à traduire en "langage Supabase" avec la DATA API. Il faudra que l'id du WHERE tout à la fin de la requête soit dynamique,
     // en fonction du meuble cliqué.
-    //     SELECT
+    //    SELECT
     //     "Meuble"."MeubleNom",
     //     "Meuble"."Photo",
     //     "Meuble"."Type",
@@ -64,7 +65,7 @@ async function getMeubleData() {
     //     INNER JOIN "Matiere" ON "MeubleMatiereRelation"."MatchMatiereID" = "Matiere".id
     //     INNER JOIN "MeublePieceRelation" ON "Meuble".id = "MeublePieceRelation"."MatchMeubleID"
     //     INNER JOIN "Piece" ON "MeublePieceRelation"."MatchPieceID" = "Piece".id
-    //   WHERE "Meuble".id = 5
+    //   WHERE "Meuble".id = meubleId
       
     } catch (error) {
         console.error("Erreur lors de la récupération des données:", error.message);
@@ -87,10 +88,10 @@ app.get("/allmeubles", async (req, res) => {
 // A COMPLETER
 // Définition de la route racine ('/id') pour récupérer et renvoyer les données d'un seul meuble, en fonction de son id
 app.get("/meuble/:meubleid", async (req, res) => {
-    console.log(req.params.meubleid)
-    res.status(200).json({test:"test"})
-    // const data = await getMeubleData();
-    // res.status(200).json(data)
+    const meubleId = req.params.meubleid
+    // res.status(200).json({test:"test"})
+    const data = await getMeubleData(meubleId);
+    res.status(200).json(data)
 })
 
 // Démarrage du serveur Express sur le port spécifié
