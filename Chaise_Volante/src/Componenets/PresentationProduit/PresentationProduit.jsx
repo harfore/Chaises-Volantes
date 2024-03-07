@@ -52,10 +52,10 @@ const ProductDetails = () => {
                     />
                 </div>
             </div>
-
+            {/* Image agrandie */}
             <div className="w-1/2 p-4">
             {selectedImage && (
-                <div className="fixed top-10 left-10 bottom-10 right-10 flex justify-center items-center bg-gray-900 bg-opacity-75">
+                <div className="fixed left-10 bottom-10 right-10 flex justify-center items-center bg-gray-900 bg-opacity-75">
                     <div className="relative">
                         <button
                             className="absolute top-2 right-2 text-white"
@@ -73,12 +73,12 @@ const ProductDetails = () => {
                 )}
 
                 {/* Détails du produit */}
-                <h2 className="text-3xl font-semibold mb-2">Nom du Produit</h2>
+                <h2 className="text-3xl font-semibold mb-2 ">Nom du Produit</h2>
                 <p className="text-gray-700 mb-4">
                     Description du produit. Informations sur la matière, la couleur, etc.
                 </p>
 
-                <p className="text-2xl font-semibold tex-gray-800 mb-2">Matière: </p>
+                <p className="text-2xl font-semibold tex-gray-800 mb-2 mt-20">Matière: </p>
                 <p className="text-xl text-gray-800 mb-2">Matière du produit</p>
                 <p className="text-2xl font-semibold text-gray-800 mb-2">Couleur:</p>
                 <p className="text-xl text-gray-800 mb-2">Couleur du produit</p>
@@ -87,7 +87,7 @@ const ProductDetails = () => {
 
                 {/* Bouton Ajouter au panier */}
                 <button
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-28 ml-32"
                     onClick={handleAddToCart}
                 >
                     Ajouter au panier

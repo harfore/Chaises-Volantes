@@ -4,6 +4,7 @@ import { PiArmchairDuotone } from "react-icons/pi";
 import { IoMdSearch } from "react-icons/io";
 import { AiOutlineShoppingCart, AiOutlineHeart } from "react-icons/ai"; // Import des icônes Panier et Favoris
 
+
 const NavBar = () => {
   const [headerFixed, setHeaderFixed] = useState(false);
 
@@ -78,9 +79,9 @@ const NavBar = () => {
         </div>
         <h1 className="bg-orange-300 text-xl font-semibold">
           {" "}
+        <PiArmchairDuotone size={35} className="bg-orange-300 ml-20" />
           LES CHAISES VOLANTES
         </h1>
-        <PiArmchairDuotone size={35} className="bg-orange-300 mr-10" />
         <div className="hidden lg:block">
           <div className="bg-orange-300 flex items-center gap-4">
             {/* Utilisation des icônes à la place des textes */}
