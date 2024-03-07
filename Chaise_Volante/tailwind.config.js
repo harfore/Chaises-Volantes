@@ -6,6 +6,9 @@ export default {
   ],
   mode:"class",
   theme: {
+    fontFamily: {
+      AMERSN__: ["AMERSN__", "sans-seriff"],
+    },
     extend: {
       colors:{
         primary: "#000000",
