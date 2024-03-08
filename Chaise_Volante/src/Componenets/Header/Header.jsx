@@ -15,7 +15,7 @@ const NavBar = () => {
   // Écouteur d'événement pour détecter le défilement de la fenêtre
   window.addEventListener("scroll", () => {
     // Si le défilement est supérieur à 200 pixels, fixe le header, sinon le relâche
-    if (window.scrollY > 200) {
+    if (window.scrollY > 550) {
       setHeaderFixed(true);
     } else {
       setHeaderFixed(false);
@@ -53,14 +53,14 @@ const NavBar = () => {
       <div className="bg-orange-300 container flex justify-between items-center py-4 ml-8">
         <div className="bg-orange-300 flex items-center gap-4">
           {/* Menu déroulant */}
-          <div className="relative cursor-pointer group">
+          <div className="relative cursor-pointer group transition duration-300 hover:scale-110">
             <a
               href="#"
               className="bg-orange-300 flex items-center gap-2 text-primary-500 py-2"
             >
               Menu
               <span>
-                <TiThMenuOutline className="bg-orange-300 group-hover:rotate-180 duration-300" />
+                <TiThMenuOutline className="bg-orange-300 group-hover:rotate-180 duration-300 " />
               </span>
             </a>
             {/* Contenu du menu déroulant */}
@@ -80,7 +80,7 @@ const NavBar = () => {
             </div>
           </div>
           {/* Barre de recherche */}
-          <div className="bg-orange-300 relative group hidden sm:block animate-pulse">
+          <div className="bg-orange-300 relative group hidden sm:block animate-pulse transition duration-300 hover:scale-110">
             <input
               type="text"
               placeholder="Search"
@@ -91,7 +91,7 @@ const NavBar = () => {
           </div>
         </div>
         {/* Titre du site */}
-        <h1 className="bg-orange-300 text-xl font-semibold ml-36">
+        <h1 className="bg-orange-300 text-xl font-semibold transition duration-500 hover:scale-150 cursor-pointer">
           {/* Icône du site */}
           <PiArmchairDuotone size={35} className="bg-orange-300 ml-24" />
           LES CHAISES VOLANTES
@@ -105,7 +105,7 @@ const NavBar = () => {
                 href="/#panier"
                 className="bg-orange-300 inline-block text-primary-500 hover:text-primary duration-200"
               >
-                <AiOutlineShoppingCart size={24} className="bg-orange-300" />
+                <AiOutlineShoppingCart size={24} className="bg-orange-300 transition duration-300 hover:scale-125" />
               </a>
             </div>
             {/* Icône des favoris */}
@@ -114,14 +114,14 @@ const NavBar = () => {
                 href="/#favoris"
                 className=" inline-block text-primary-500 hover:text-primary duration-200"
               >
-                <AiOutlineHeart size={24} className="bg-orange-300" />
+                <AiOutlineHeart size={24} className="bg-orange-300 transition duration-300 hover:scale-125" />
               </a>
             </div>
             {/* Lien pour la connexion */}
             <div>
               <a
                 href="/#connect"
-                className="bg-orange-300 inline-block px-4 text-primary-500 hover:text-primary duration-200 font-semibold text-xl"
+                className="bg-orange-300 inline-block px-4 text-primary-500 hover:text-primary duration-200 font-semibold text-xl transition duration-300 hover:scale-110"
               >
                 Connect
               </a>

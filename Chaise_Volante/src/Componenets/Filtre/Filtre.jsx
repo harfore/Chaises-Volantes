@@ -15,7 +15,7 @@ const FiltreBar = ({ options, onFilterChange }) => {
 
   // Rendu du composant FiltreBar
   return (
-    <div className="flex justify-between items-center rgb(247, 236, 217) p-3 space-x-4">
+    <div className="flex justify-between items-center rgb(247, 236, 217) p-3 space-x-4 mt-11">
       <div className="flex-grow ">
         <p class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-black ">
           Filtres :{" "}
@@ -24,7 +24,7 @@ const FiltreBar = ({ options, onFilterChange }) => {
       {/* Options de filtre */}
       {Object.keys(options).map((key) => (
         <div
-          className="flex-grow mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-black"
+          className="flex-grow mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-black  hover:shadow-lg "
           key={key}
         >
           <FilterOption
@@ -37,7 +37,7 @@ const FiltreBar = ({ options, onFilterChange }) => {
       {/* Bouton pour réinitialiser les filtres */}
       <button
         onClick={() => setFilters({})}
-        className="bg-orange-300 text-black px-4 py-2 rounded"
+        className="bg-orange-300 text-black px-4 py-2 rounded shadow hover:shadow-lg"
       >
         Réinitialiser
       </button>

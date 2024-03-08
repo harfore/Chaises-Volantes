@@ -18,13 +18,13 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className="flex relative">
-      <div className="w-1/2 p-4 max-w-2xl">
+    <div className="flex flex-col md:flex-row ">
+      <div className="w-full sm:w-1/2 p-4 max-w-xl">
         {/* Grande photo du produit */}
         <img
           src="./src/assets/photos/canape-2-places-beige-sable-1000-3-22-238683_5.jpg"
           alt="Grande photo du produit"
-          className="w-full h-auto cursor-pointer w-max-[300px]"
+          className="w-full h-auto cursor-pointer w-max-[300px] shadow-lg shadow hover:shadow-lg cursor-zoom-in"
           onClick={() =>
             handleImageClick(
               "./src/assets/photos/canape-2-places-beige-sable-1000-3-22-238683_5.jpg"
@@ -33,11 +33,11 @@ const ProductDetails = () => {
         />
 
         {/* Photos complémentaires */}
-        <div className="flex mt-4">
+        <div className="flex mt-4 ">
           <img
             src="./src/assets/photos/canape-2-places-beige-sable-1000-3-22-238683_4.jpg"
             alt="Photo complémentaire 1"
-            className="w-1/3 p-2 cursor-pointer"
+            className="w-1/3 p-2 cursor-pointer  hover:shadow-lg cursor-zoom-in transition duration-300 hover:scale-110"
             onClick={() =>
               handleImageClick(
                 "./src/assets/photos/canape-2-places-beige-sable-1000-3-22-238683_4.jpg"
@@ -47,7 +47,7 @@ const ProductDetails = () => {
           <img
             src="./src/assets/photos/canape-2-places-beige-sable-1000-3-22-238683_2.jpg"
             alt="Photo complémentaire 2"
-            className="w-1/3 p-2 cursor-pointer"
+            className="w-1/3 p-2 cursor-pointer hover:shadow-lg cursor-zoom-in transition duration-300 hover:scale-110"
             onClick={() =>
               handleImageClick(
                 "./src/assets/photos/canape-2-places-beige-sable-1000-3-22-238683_2.jpg"
@@ -57,7 +57,7 @@ const ProductDetails = () => {
           <img
             src="./src/assets/photos/canape-2-places-beige-sable-1000-3-22-238683_1.jpg"
             alt="Photo complémentaire 3"
-            className="w-1/3 p-2 cursor-pointer"
+            className="w-1/3 p-2 cursor-pointer hover:shadow-lg cursor-zoom-in transition duration-300 hover:scale-110"
             onClick={() =>
               handleImageClick(
                 "./src/assets/photos/canape-2-places-beige-sable-1000-3-22-238683_1.jpg"
@@ -69,18 +69,18 @@ const ProductDetails = () => {
       {/* Image agrandie lorsque l'on clique sur une miniature*/}
       <div className="w-1/3 p-4 bt-50">
         {selectedImage && (
-          <div className="fixed left-10 bottom-10 right-10 flex justify-center items-center bg-gray-400 bg-opacity-50">
+          <div className="fixed left-10 bottom-10 right-10 flex justify-center items-center bg-gray-100 bg-opacity-50">
             <div className="relative">
               <button
                 className="absolute top-2 right-2 text-white"
                 onClick={handleCloseImage}
               >
-                <IoClose className="text-3xl " />
+                <IoClose className="text-3xl" />
               </button>
               <img
                 src={selectedImage}
                 alt="Image agrandie"
-                className="w-[600px] h-auto z-50 mb-24"
+                className="w-[750px] h-auto z-50 mb-24"
               />
             </div>
           </div>
@@ -88,7 +88,7 @@ const ProductDetails = () => {
 
         {/* Détails du produit */}
         <h2 className="text-3xl font-semibold mb-2 ">Nom du Produit</h2>
-        <p className="text-gray-700 mb-4">
+        <p className="text-gray-700 mb-4 italic">
           Description du produit. Informations sur la matière, la couleur, etc.
         </p>
 
@@ -103,7 +103,7 @@ const ProductDetails = () => {
 
         {/* Bouton Ajouter au panier */}
         <button
-          className="absolute bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-28 ml-32 animate-pulse z-10"
+          className="absolute bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-[35px] ml-80 animate-pulse"
           onClick={handleAddToCart}
         >
           Ajouter au panier
