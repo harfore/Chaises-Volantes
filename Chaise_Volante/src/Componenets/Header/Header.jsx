@@ -47,10 +47,10 @@ const NavBar = () => {
       data-sticky-type="always"
       className={`bg-orange-300 ${
         // Si headerFixed est vrai, ajoute les classes pour fixer le header
-        headerFixed ? "fixed top-0 left-0 w-full shadow-lg" : ""
+        headerFixed ? "fixed top-0 left-0 shadow-lg " : ""
       }`}
     >
-      <div className="bg-orange-300 container flex justify-between items-center py-4 ml-8">
+      <div className="bg-orange-300 container flex justify-between items-center py-4">
         <div className="bg-orange-300 flex items-center gap-4">
           {/* Menu déroulant */}
           <div className="relative cursor-pointer group transition duration-300 hover:scale-110">
@@ -64,7 +64,7 @@ const NavBar = () => {
               </span>
             </a>
             {/* Contenu du menu déroulant */}
-            <div className="bg-yellow-600 absolute z-50 hidden group-hover:block w-48 bg-white shadow-md p-2 rounded-md px-2 py-2 z-50">
+            <div className="bg-yellow-600 absolute z-50 hidden group-hover:block w-48 bg-white shadow-md p-2 rounded-md px-2 py-2 ">
               <ul className="bg-orange-100 space-y-2 rounded-md px-4 py-2">
                 {dropDownMenu.map((data, index) => (
                   <li key={index}>
@@ -91,7 +91,7 @@ const NavBar = () => {
           </div>
         </div>
         {/* Titre du site */}
-        <h1 className="bg-orange-300 text-xl font-semibold transition duration-500 hover:scale-150 cursor-pointer">
+        <h1 className="bg-orange-300 text-xl transition duration-500 hover:scale-150 cursor-pointer">
           {/* Icône du site */}
           <PiArmchairDuotone size={35} className="bg-orange-300 ml-24" />
           LES CHAISES VOLANTES
@@ -121,7 +121,7 @@ const NavBar = () => {
             <div>
               <a
                 href="/#connect"
-                className="bg-orange-300 inline-block px-4 text-primary-500 hover:text-primary duration-200 font-semibold text-xl transition duration-300 hover:scale-110"
+                className="bg-orange-300 inline-block px-4 text-primary-500 hover:text-primary duration-200  text-xl transition duration-300 hover:scale-110"
               >
                 Connect
               </a>
