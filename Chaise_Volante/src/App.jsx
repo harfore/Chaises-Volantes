@@ -9,6 +9,8 @@ import 'react-multi-carousel/lib/styles.css';
 import { productData, responsive } from './data';
 import Product from './Product';
 import Salon from './Componenets/Salon/Salon';
+import Cuisine from './Componenets/Cuisine/Cuisine';
+import Chambre from './Componenets/Chambre/Chambre';
 // import PresentationProduit from './Componenets/PresentationProduit/PresentationProduit';
 
 
@@ -22,7 +24,7 @@ function App() {
   ))
 
   return (
-  <div className='m-10'>
+  <div className='m-5'>
     <Header />
     <MainChoice />
     <Text/>
@@ -35,6 +37,8 @@ function App() {
       responsive={responsive}>{product}</Carousel>
     </div>
     <Salon/>
+    <Cuisine/>
+    <Chambre/>
     
    
     {/* <PresentationProduit /> */}
