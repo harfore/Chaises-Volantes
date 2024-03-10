@@ -20,8 +20,9 @@ export const responsive = {
     }
   };
   
-  //Ici vous avez les produits qui vont s'afficher dans le carrousel. A FAIRE: rajouter les images que vous voulez; ajouter les ligne pour pouvoir afficher le prix
-  // Ps: les images des produits en vent sont dans le folder photos (src-assets-photos)
+  //Ici vous avez les produits qui vont s'afficher dans le carrousel. A FAIRE: rajouter les images que vous voulez; ajouter les ligne pour pouvoir afficher le prix. Cette const affiche seulement les produits de la categorie NEAUVEAUTé.
+  //Il faudra probablement répliquer la même const mais pour les propduits SALON, CUISINE, CHAMBRE, SALLE DE BAIN. Et ensuit exporter les const dans les respectifs fichiers
+  // Ps: les images des produits en vent sont dans le folder "photos" (src-assets-photos). A FAIRE: trouver des images produits pour la salle bain 
   export const productData = [
     {
       id:1,

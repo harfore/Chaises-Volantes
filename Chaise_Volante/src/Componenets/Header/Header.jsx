@@ -45,22 +45,22 @@ const NavBar = () => {
   return (
     <div
       data-sticky-type="always"
-      className={`bg-orange-300 ${
+      className={` ${
         // Si headerFixed est vrai, ajoute les classes pour fixer le header
-        headerFixed ? "fixed top-0 left-0 shadow-lg z-30 w-full  " : ""
+        headerFixed ? "fixed top-0 left-0 shadow-lg z-30 w-full" : ""
       }`}
     >
-      <div className="bg-orange-300 container flex justify-between items-center p-4">
-        <div className="bg-orange-300 flex items-center gap-4">
+      <div className="container flex justify-between items-center p-4 border-2 border-black ">
+        <div className=" flex items-center gap-4">
           {/* Menu déroulant */}
           <div className="relative cursor-pointer group transition duration-300 hover:scale-110">
             <a
               href="#"
-              className="bg-orange-300 flex items-center gap-2 text-primary-500 py-2"
+              className=" flex items-center gap-2 text-primary-500 py-2"
             >
               Menu
               <span>
-                <TiThMenuOutline className="bg-orange-300 group-hover:rotate-180 duration-300 " />
+                <TiThMenuOutline className=" group-hover:rotate-180 duration-300 " />
               </span>
             </a>
             {/* Contenu du menu déroulant */}
@@ -80,48 +80,48 @@ const NavBar = () => {
             </div>
           </div>
           {/* Barre de recherche */}
-          <div className="bg-orange-300 relative group hidden sm:block animate-pulse transition duration-300 hover:scale-110">
+          <div className=" relative group hidden sm:block animate-pulse transition duration-300 hover:scale-110">
             <input
               type="text"
               placeholder="Search"
-              className="bg-orange-50 searchbar rounded-md px-4 py-2 border border-gray-300 focus:outline-none focus:border-primary"
+              className=" searchbar rounded-md px-4 py-2 border border-gray-500 focus:outline-none focus:border-primary"
             ></input>
             {/* Icône de recherche */}
             <IoMdSearch className="text-xl text-gray-600 group-hover:text-primary absolute top-1/2 -translate-y-1/2 right-3 duration-200" />
           </div>
         </div>
         {/* Titre du site */}
-        <h1 className="bg-orange-300 text-xl transition duration-500 hover:scale-150 cursor-pointer">
+        <h1 className=" text-xl transition duration-500 hover:scale-150 cursor-pointer">
           {/* Icône du site */}
-          <PiArmchairDuotone size={35} className="bg-orange-300 ml-24" />
+          <PiArmchairDuotone size={35} className=" ml-24" />
           LES CHAISES VOLANTES
         </h1>
         {/* Menu principal */}
         <div className="hidden lg:block">
-          <div className="bg-orange-300 flex items-center gap-4">
+          <div className=" flex items-center gap-4">
             {/* Icône du panier */}
-            <div className="bg-orange-300">
+            <div >
               <a
                 href="/#panier"
-                className="bg-orange-300 inline-block text-primary-500 hover:text-primary duration-200"
+                className=" inline-block text-primary-500 hover:text-primary duration-200"
               >
-                <AiOutlineShoppingCart size={24} className="bg-orange-300 transition duration-300 hover:scale-110" />
+                <AiOutlineShoppingCart size={24} className=" transition duration-300 hover:scale-110" />
               </a>
             </div>
             {/* Icône des favoris */}
-            <div className="bg-orange-300">
+            <div >
               <a
                 href="/#favoris"
                 className=" inline-block text-primary-500 hover:text-primary duration-200"
               >
-                <AiOutlineHeart size={24} className="bg-orange-300 transition duration-300 hover:scale-110" />
+                <AiOutlineHeart size={24} className=" transition duration-300 hover:scale-110" />
               </a>
             </div>
             {/* Lien pour la connexion */}
             <div>
               <a
                 href="/#connect"
-                className="bg-orange-300 inline-block text-primary-500 hover:text-primary duration-200  text-lg transition duration-300 hover:scale-110"
+                className=" inline-block text-primary-500 hover:text-primary duration-200  text-lg transition duration-300 hover:scale-110"
               >
                 Connect
               </a>
