@@ -23,35 +23,87 @@ export const responsive = {
   //Ici vous avez les produits qui vont s'afficher dans le carrousel. A FAIRE: rajouter les images que vous voulez; ajouter les ligne pour pouvoir afficher le prix. Cette const affiche seulement les produits de la categorie NEAUVEAUTé.
   //Il faudra probablement répliquer la même const mais pour les propduits SALON, CUISINE, CHAMBRE, SALLE DE BAIN. Et ensuit exporter les const dans les respectifs fichiers
   // Ps: les images des produits en vent sont dans le folder "photos" (src-assets-photos). A FAIRE: trouver des images produits pour la salle bain 
-  export const productData = [
-    {
-      id:1,
-      imageurl : "",
-      name: "Grande table",
-    },
-    {
-      id:2,
-      imageurl : "",
-      name: "Chaise",
-    },
-    {
-      id:3,
-      imageurl : "",
-      name: "Table de chevet",
-    },
-    {
-      id:4,
-      imageurl : "",
-      name: "Petite table",
-    },
-    {
-      id:5,
-      imageurl : "",
-      name: "Canapé",
-    },
-    {
-      id:6,
-      imageurl : "",
-      name: "Bibliothéque",
-    }
-  ];
+  
+  const getAllData = async () => {
+    const response = await fetch('http://localhost:3000/allmeubles')
+    const data = await response.json()
+    console.log(data)
+    return data
+  }
+
+  export const productData = await getAllData()
+
+  // export const productData = [
+  //   {
+  //     id:1,
+  //     Photo: [{
+  //       "photo1":"../img/CanapeGris1.avif"
+  //     },
+  //     {
+  //       "photo2":"../img/img1.jpg"
+  //     }
+  //   ],
+  //     MeubleNom: "Grande table",
+  //     Prix:"test"
+  //   },
+  //   {
+  //     id:2,
+  //     Photo: [{
+  //       "photo1":"../img/img1.jpg"
+  //     },
+  //     {
+  //       "photo2":"../img/img1.jpg"
+  //     }
+  //   ],
+  //     MeubleNom: "Chaise",
+  //     Prix:"test"
+  //   },
+  //   {
+  //     id:3,
+  //     Photo: [{
+  //       "photo1":"../img/img3.jpg"
+  //     },
+  //     {
+  //       "photo2":"../img/img1.jpg"
+  //     }
+  //   ],
+  //     MeubleNom: "Table de chevet",
+  //     Prix:"test"
+  //   },
+  //   {
+  //     id:4,
+  //     Photo: [{
+  //       "photo1":"../img/CanapeGris1.avif"
+  //     },
+  //     {
+  //       "photo2":"../img/img1.jpg"
+  //     }
+  //   ],
+  //     MeubleNom: "Petite table",
+  //     Prix:"test"
+  //   },
+  //   {
+  //     id:5,
+  //     Photo: [{
+  //       "photo1":"../img/CanapeGris1.avif"
+  //     },
+  //     {
+  //       "photo2":"../img/img1.jpg"
+  //     }
+  //   ],
+  //     MeubleNom: "Canapé",
+  //     Prix:"test"
+  //   },
+  //   {
+  //     id:6,
+  //     Photo: [{
+  //       "photo1":"../img/CanapeGris1.avif"
+  //     },
+  //     {
+  //       "photo2":"../img/img1.jpg"
+  //     }
+  //   ],
+  //     MeubleNom: "Bibliothéque",
+  //     Prix:"test"
+  //   }
+  // ];
