@@ -1,4 +1,3 @@
-
 //Pour rendre responsive le carrousel
 export const responsive = {
   superLargeDesktop: {
@@ -16,25 +15,26 @@ export const responsive = {
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
-    items: 1
-  }
+    items: 1,
+  },
 };
 
 //Ici vous avez les produits qui vont s'afficher dans le carrousel. A FAIRE: rajouter les images que vous voulez; ajouter les ligne pour pouvoir afficher le prix. Cette const affiche seulement les produits de la categorie NEAUVEAUTé.
 //Il faudra probablement répliquer la même const mais pour les propduits SALON, CUISINE, CHAMBRE, SALLE DE BAIN. Et ensuit exporter les const dans les respectifs fichiers
-// Ps: les images des produits en vent sont dans le folder "photos" (src-assets-photos). A FAIRE: trouver des images produits pour la salle bain 
+// Ps: les images des produits en vent sont dans le folder "photos" (src-assets-photos). A FAIRE: trouver des images produits pour la salle bain
 
 const getAllData = async () => {
-  const response = await fetch('http://localhost:3000/allmeubles')
-  const data = await response.json()
-  console.log("data:" + data)
-  return data
-}
+  const response = await fetch("http://localhost:3000/allmeubles");
+  const data = await response.json();
+  console.log(data);
+  return data;
+};
 
-// export const productData = await getAllData()
+// export const productData = await getAllData();
 
 export const productData = [
   {
+    "id": 5,
     "MeubleNom": "Table à manger",
     "Photo": [
       {
@@ -55,6 +55,7 @@ export const productData = [
     "PieceNom": "Cuisine"
   },
   {
+    "id": 4,
     "MeubleNom": "Table à manger extensible",
     "Photo": [
       {
@@ -75,6 +76,7 @@ export const productData = [
     "PieceNom": "Cuisine"
   },
   {
+    "id": 2,
     "MeubleNom": "Table à manger vintage",
     "Photo": [
       {
@@ -95,6 +97,7 @@ export const productData = [
     "PieceNom": "Cuisine"
   },
   {
+    "id": 3,
     "MeubleNom": "Table à manger à roulettes",
     "Photo": [
       {
@@ -115,6 +118,7 @@ export const productData = [
     "PieceNom": "Cuisine"
   },
   {
+    "id": 1,
     "MeubleNom": "Chaise en velours noire",
     "Photo": [
       {
@@ -135,6 +139,7 @@ export const productData = [
     "PieceNom": "Cuisine"
   },
   {
+    "id": 6,
     "MeubleNom": "Lit vintage",
     "Photo": [
       {
@@ -155,6 +160,7 @@ export const productData = [
     "PieceNom": "Chambre"
   },
   {
+    "id": 7,
     "MeubleNom": "Lit exotique",
     "Photo": [
       {
@@ -175,6 +181,7 @@ export const productData = [
     "PieceNom": "Chambre"
   },
   {
+    "id": 8,
     "MeubleNom": "Lit capitonné",
     "Photo": [
       {
@@ -195,6 +202,7 @@ export const productData = [
     "PieceNom": "Chambre"
   },
   {
+    "id": 9,
     "MeubleNom": "Étagère design",
     "Photo": [
       {
@@ -215,6 +223,7 @@ export const productData = [
     "PieceNom": "Salon"
   },
   {
+    "id": 10,
     "MeubleNom": "Étagère à chaussures",
     "Photo": [
       {
@@ -235,6 +244,7 @@ export const productData = [
     "PieceNom": "Salon"
   },
   {
+    "id": 11,
     "MeubleNom": "Étagère à 6 niveaux",
     "Photo": [
       {
@@ -255,6 +265,7 @@ export const productData = [
     "PieceNom": "Salon"
   },
   {
+    "id": 12,
     "MeubleNom": "Chaise en velours orange",
     "Photo": [
       {
@@ -275,6 +286,7 @@ export const productData = [
     "PieceNom": "Cuisine"
   },
   {
+    "id": 13,
     "MeubleNom": "Canapé convertible style scandinave",
     "Photo": [
       {
@@ -295,16 +307,17 @@ export const productData = [
     "PieceNom": "Salon"
   },
   {
+    "id": 14,
     "MeubleNom": "Canapé clic-clac en velours",
     "Photo": [
       {
-        "photo1": "../img/ClicClac1.avif"
+        "photo1": "../img/ClicClac2.avif"
       },
       {
-        "photo2": "../img/ClicClac1.avif"
+        "photo2": "../img/ClicClac3.avif"
       },
       {
-        "photo3": "../img/ClicClac1.avif"
+        "photo3": "../img/ClicClac4.avif"
       },
       {
         "photo4": "../img/ClicClac1.avif"
@@ -315,6 +328,7 @@ export const productData = [
     "PieceNom": "Salon"
   },
   {
+    "id": 15,
     "MeubleNom": "Canapé en velours côtelé beige",
     "Photo": [
       {
@@ -335,6 +349,7 @@ export const productData = [
     "PieceNom": "Salon"
   },
   {
+    "id": 16,
     "MeubleNom": "Canapé en velours côtelé gris clair",
     "Photo": [
       {
@@ -355,6 +370,7 @@ export const productData = [
     "PieceNom": "Salon"
   },
   {
+    "id": 17,
     "MeubleNom": "Canapé beige sable",
     "Photo": [
       {
@@ -375,17 +391,3 @@ export const productData = [
     "PieceNom": "Salon"
   }
 ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
