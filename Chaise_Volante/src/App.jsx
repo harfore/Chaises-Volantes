@@ -11,6 +11,7 @@ import Product from "./Product";
 import Salon from "./Componenets/Salon/Salon";
 import Cuisine from "./Componenets/Cuisine/Cuisine";
 import Chambre from "./Componenets/Chambre/Chambre";
+import Piece from "./Componenets/Piece/Piece";
 import PresentationProduit from './Componenets/PresentationProduit/PresentationProduit';
 
 function App() {
@@ -43,6 +44,10 @@ function App() {
       <Salon />
       <Cuisine />
       <Chambre />
+      <Piece categorie="salon" side="left" titre="titre" image="image" />
+      <Piece categorie="chambre" side="right" titre="titre" image="image" />
+      <Piece categorie="cuisine" side="left" titre="titre" image="image" />
+      <Piece categorie="salle-de-bain" side="right" titre="titre" image="image" />
       { <PresentationProduit /> }
       <Footer />
     </div>
