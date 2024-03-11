@@ -12,11 +12,11 @@ import Salon from "./Componenets/Salon/Salon";
 import Cuisine from "./Componenets/Cuisine/Cuisine";
 import Chambre from "./Componenets/Chambre/Chambre";
 import Piece from "./Componenets/Piece/Piece";
-import PresentationProduit from './Componenets/PresentationProduit/PresentationProduit';
+//import PresentationProduit from './Componenets/PresentationProduit/PresentationProduit';
 
 function App() {
   const product = productData.map((item) => (
-    <Product name={item.MeubleNom} img={item.Photo[0].photo1} prix={item.Prix} />
+    <Product name={item.MeubleNom} img={item.Photo[0].photo1} prix={item.Prix} id={item.id}/>
   ));
   //A FAIRE: ajouter le composant SALLE DE BAIN. A vous de le faire comme vous voulez.
   // Le composant SALLE DE BAIN dois être placé dans cette dive en ordre d'apparition sur la page principale
@@ -48,7 +48,6 @@ function App() {
       <Piece categorie="chambre" side="right" titre="titre" image="image" />
       <Piece categorie="cuisine" side="left" titre="titre" image="image" />
       <Piece categorie="salle-de-bain" side="right" titre="titre" image="image" />
-      { <PresentationProduit /> }
       <Footer />
     </div>
   );

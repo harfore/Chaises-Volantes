@@ -393,11 +393,13 @@ export const productData = [
 ]
 
 
-const getSingleFurniture = async () => {
-  const response = await fetch('http://localhost:3000/meuble/2')
+export const getSingleFurniture = async (meubleID) => {
+  const response = await fetch(`http://localhost:3000/meuble/${meubleID}`)
   const data = await response.json()
   console.log(data)
   return data
 }
-
-export const SingleFurniture = await getSingleFurniture()
+/*
+const meubleID = 8
+export const SingleFurniture = await getSingleFurniture(meubleID)
+*/

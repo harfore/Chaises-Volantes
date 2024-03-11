@@ -14,7 +14,8 @@ function Product(props) {
       />
       <h2>{props.name}</h2>
       <p>{props.prix} €</p>
-      <Link to={`/product/{props.id}`}>
+      <p>{props.id}</p>
+      <Link to={`/product/${props.id}`}>
         <p>Découvrir</p>
       </Link>
     </div>

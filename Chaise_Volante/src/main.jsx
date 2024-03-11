@@ -1,23 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import PresentationProduit from './Componenets/PresentationProduit/PresentationProduit.jsx'
-import './index.css'
-import {RouterProvider, createBrowserRouter} from 'react-router-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.jsx';
+import PresentationProduit from './Componenets/PresentationProduit/PresentationProduit.jsx';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './index.css';
 
-const router = createBrowserRouter ([
-  {
-    path:"/",
-    element:<App/>
-  },
-  {
-    path:"/product/:productId",
-    element:<PresentationProduit />
-  }
-])
-
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <Router>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/product/:productId" element={<PresentationProduit />} />
+      </Routes>
+    </Router>
   </React.StrictMode>,
-)
+  document.getElementById('root')
+);

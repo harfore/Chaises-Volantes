@@ -1,23 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { IoClose } from "react-icons/io5";
-import { SingleFurniture } from "/src/data"
+import { getSingleFurniture } from "/src/data";
+import { useParams } from 'react-router-dom';
 
-const ProductDetails = () => {
+const ProductDetails = (props) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [Furniture, setFurniture] = useState(null);
-
+  const { productId } = useParams();
   useEffect(() => {
     const fetchProductData = async () => {
       try {
-        const data = await SingleFurniture; // Utilisez votre fonction de récupération de données
+        const data = await getSingleFurniture(productId); // récupération de données
         setFurniture(data);
+        console.log("props "+ productId)
       } catch (error) {
         console.error('Erreur lors de la récupération des données du produit :', error);
       }
     };
 
     fetchProductData();
-  }, []);
+  }, [productId]);
 
   const handleImageClick = (imageSrc) => {
     setSelectedImage(imageSrc);
