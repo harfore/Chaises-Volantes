@@ -107,3 +107,12 @@ export const responsive = {
   //     Prix:"test"
   //   }
   // ];
+
+const getSingleFurniture = async () => {
+  const response = await fetch('http://localhost:3000/meuble/2')
+  const data = await response.json()
+  console.log(data)
+  return data
+}
+
+export const SingleFurniture = await getSingleFurniture()

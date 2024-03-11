@@ -41,7 +41,7 @@ async function getAllMeublesData() {
 async function getMeubleData(meubleId) {
     try{
         let {data, error} = await supabase
-        .from('Meuble').select('MeubleNom').eq('id', meubleId)
+        .from('Meuble').select('*').eq('id', meubleId)
         return data
 
     // Cette requête SQL est à traduire en "langage Supabase" avec la DATA API. Il faudra que l'id du WHERE tout à la fin de la requête soit dynamique,

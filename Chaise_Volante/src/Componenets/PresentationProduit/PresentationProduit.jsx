@@ -1,8 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { IoClose } from "react-icons/io5";
+import { SingleFurniture } from "/src/data"
 
 const ProductDetails = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [Furniture, setFurniture] = useState(null);
+
+  useEffect(() => {
+    const fetchProductData = async () => {
+      try {
+        const data = await SingleFurniture; // Utilisez votre fonction de récupération de données
+        setFurniture(data);
+      } catch (error) {
+        console.error('Erreur lors de la récupération des données du produit :', error);
+      }
+    };
+
+    fetchProductData();
+  }, []);
 
   const handleImageClick = (imageSrc) => {
     setSelectedImage(imageSrc);
@@ -17,53 +32,36 @@ const ProductDetails = () => {
     alert("Le produit a été ajouté au panier !");
   };
 
+  if (!Furniture) {
+    return <div>Loading...</div>; // Affichez un indicateur de chargement si les données ne sont pas encore disponibles
+  }
+
   return (
     <div className="flex flex-col md:flex-row ">
       <div className="w-full sm:w-1/2 p-4 max-w-xl">
         {/* Grande photo du produit */}
         <img
-          src="./src/assets/photos/canape-2-places-beige-sable-1000-3-22-238683_5.jpg"
+          src={Furniture[0].Photo[0].photo1}
           alt="Grande photo du produit"
           className="w-full h-auto cursor-pointer w-max-[300px] shadow-lg shadow hover:shadow-lg cursor-zoom-in"
           onClick={() =>
-            handleImageClick(
-              "./src/assets/photos/canape-2-places-beige-sable-1000-3-22-238683_5.jpg"
-            )
+            handleImageClick(Furniture.mainImage)
           }
         />
 
-        {/* Photos complémentaires */}
+        {/* Photos complémentaires*/} 
         <div className="flex mt-4 ">
-          <img
-            src="./src/assets/photos/canape-2-places-beige-sable-1000-3-22-238683_4.jpg"
-            alt="Photo complémentaire 1"
-            className="w-1/3 p-2 cursor-pointer  hover:shadow-lg cursor-zoom-in transition duration-300 hover:scale-110"
-            onClick={() =>
-              handleImageClick(
-                "./src/assets/photos/canape-2-places-beige-sable-1000-3-22-238683_4.jpg"
-              )
-            }
-          />
-          <img
-            src="./src/assets/photos/canape-2-places-beige-sable-1000-3-22-238683_2.jpg"
-            alt="Photo complémentaire 2"
-            className="w-1/3 p-2 cursor-pointer hover:shadow-lg cursor-zoom-in transition duration-300 hover:scale-110"
-            onClick={() =>
-              handleImageClick(
-                "./src/assets/photos/canape-2-places-beige-sable-1000-3-22-238683_2.jpg"
-              )
-            }
-          />
-          <img
-            src="./src/assets/photos/canape-2-places-beige-sable-1000-3-22-238683_1.jpg"
-            alt="Photo complémentaire 3"
-            className="w-1/3 p-2 cursor-pointer hover:shadow-lg cursor-zoom-in transition duration-300 hover:scale-110"
-            onClick={() =>
-              handleImageClick(
-                "./src/assets/photos/canape-2-places-beige-sable-1000-3-22-238683_1.jpg"
-              )
-            }
-          />
+          {Furniture[0].Photo.map((photo, index) => (
+              <img
+              key={index}
+              src={Object.values(photo)[0]} // Accéder à la valeur de la première propriété de chaque objet photo
+              alt={`Photo ${index + 1}`}
+              className="w-1/3 p-2 cursor-pointer hover:shadow-lg cursor-zoom-in transition duration-300 hover:scale-110"
+              onClick={() =>
+                handleImageClick(Object.values(photo)[0])
+              }
+            />
+          ))}
         </div>
       </div>
       {/* Image agrandie lorsque l'on clique sur une miniature*/}
@@ -87,19 +85,16 @@ const ProductDetails = () => {
         )}
 
         {/* Détails du produit */}
-        <h2 className="text-3xl font-semibold mb-2 ">Nom du Produit</h2>
-        <p className="text-gray-700 mb-4 italic">
-          Description du produit. Informations sur la matière, la couleur, etc.
-        </p>
-
-        <p className="text-2xl font-semibold tex-gray-800 mb-2 mt-20">
-          Matière:{" "}
-        </p>
-        <p className="text-xl text-gray-800 mb-2">Matière du produit</p>
-        <p className="text-2xl font-semibold text-gray-800 mb-2">Couleur:</p>
-        <p className="text-xl text-gray-800 mb-2">Couleur du produit</p>
+        <h2 className="text-3xl font-semibold mb-2 ">{Furniture[0].MeubleNom}</h2>
+        <p className="text-gray-700 mb-4 italic">{Furniture[0].Description}</p>
+        <p className="text-2xl font-semibold tex-gray-800 mb-2 mt-20">Matière:</p>
+        <p className="text-xl text-gray-800 mb-2">{Furniture.material}</p>
+        <p className="text-2xl font-semibold tex-gray-800 mb-2 mt-20">Couleur:</p>
+        <p className="text-xl text-gray-800 mb-2">{Furniture.color}</p>
+        <p className="text-2xl font-semibold text-gray-800 mb-2">Dimension:</p>
+        <p className="text-xl text-gray-800 mb-2">{Furniture[0].Dimension}</p>
         <p className="text-2xl font-semibold text-gray-800 mb-2">Prix</p>
-        <p className="text-xl text-gray-800 mb-4">19,99 €</p>
+        <p className="text-xl text-gray-800 mb-4">{Furniture[0].Prix} €</p>
 
         {/* Bouton Ajouter au panier */}
         <button
