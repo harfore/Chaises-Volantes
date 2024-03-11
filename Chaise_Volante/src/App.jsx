@@ -11,7 +11,6 @@ import Product from "./Product";
 import Salon from "./Componenets/Salon/Salon";
 import Cuisine from "./Componenets/Cuisine/Cuisine";
 import Chambre from "./Componenets/Chambre/Chambre";
-// import PresentationProduit from './Componenets/PresentationProduit/PresentationProduit';
 
 function App() {
   const product = productData.map((item) => (
@@ -44,7 +43,6 @@ function App() {
       <Salon />
       <Cuisine />
       <Chambre />
-      {/* <PresentationProduit /> */}
       <Footer />
     </div>
   );
