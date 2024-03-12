@@ -49,13 +49,27 @@ const Piece = (props) => {
                     console.log(name)
             }
 
+            const getLayoutStyle = () => {
+                switch (room.toLowerCase()) {
+                    case "salon":
+                        return { flexDirection: "row-reverse" }; // Invert picture and description for salon
+                    case "chambre":
+                        return { flexDirection: "row" }; // Keep picture on the left for cuisine
+                    case "cuisine":
+                        return { flexDirection: "row-reverse" }; // Invert picture and description for chambre
+                    case "salle-de-bain":
+                        return { flexDirection: "row" }; // Keep picture on the left for salle-de-bain
+                    default:
+                        return { flexDirection: "row" }; // Default layout
+                }
+            };
+
             return (
                 < Product
                     name={name}
                     prix={item.Prix}
-                    img={item.Photo[0].photo1}
+                    image={item.Photo[0].photo1}
                     room={item.PieceNom}
-                    id={item.id}
                 />
             );
         });
@@ -77,6 +91,7 @@ const Piece = (props) => {
                         {product}
                     </Carousel>
                 </div>
+
 
                 <h2 className=' text-center text-2xl font-serif m-20 t-m-30' style={{ fontFamily: 'Roslindale' }} >Découvrez notre selection de meubles pour une chambre confortable et élegante </h2>
                 <div className='bg-[url("Cuisine/cuisine.jpeg")] bg-cover bg-center h-full rounded-lg mb-10 '>
