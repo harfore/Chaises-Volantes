@@ -39,8 +39,8 @@ const ProductDetails = (props) => {
   }
 
   return (
-    <div className="grid grid-cols-2 gap-x-4 h-full">
-      <div className="w-full p-4 max-w-xl">
+    <div className="grid grid-cols-2 h-full">
+      <div className="w-2/3 p-4 max-w-xl ">
         {/* Grande photo du produit */}
         <img
           src={selectedImage || Furniture[0].Photo[0].photo1}
@@ -78,7 +78,7 @@ const ProductDetails = (props) => {
 
         {/* Bouton Ajouter au panier */}
         <button
-          className="absolute bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-[35px] ml-80 animate-pulse"
+          className="absolute bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-[35px] ml-50 animate-pulse"
           onClick={handleAddToCart}>
           Ajouter au panier
         </button>
