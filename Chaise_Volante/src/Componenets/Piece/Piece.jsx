@@ -4,21 +4,6 @@ import Product from '../../Product'
 import { productData } from '../../data'
 
 const Piece = (props) => {
-    // const salonProduct = productData.filter(item => item.PieceNom.toLowerCase() === "salon");
-    // const kitchenProduct = productData.filter(item => item.PieceNom.toLowerCase() === "cuisine");
-    // const roomProduct = productData.filter(item => item.PieceNom.toLowerCase() === "chambre");
-    // const bathroomProduct = productData.filter(item => item.PieceNom.toLowerCase() === "salle-de-bain");
-
-    const product = productData.map((item) => (
-        < Product
-            name={item.MeubleNom}
-            prix={item.Prix}
-            image={item.Photo[0].photo1}
-            room={item.PieceNom}
-        />
-    ))
-
-
     const responsive = {
         superLargeDesktop: {
             breakpoint: { max: 4000, min: 3000 },
@@ -37,6 +22,42 @@ const Piece = (props) => {
             items: 1
         }
     };
+
+    const product = productData
+        .filter(item => props.categorie.toLowerCase() === item.PieceNom.toLowerCase())
+        .map((item) => {
+            let name = item.MeubleNom;
+            switch (props.categorie.toLowerCase()) {
+                case "salon":
+                    name = item.MeubleNom;
+                    console.log("salon :" + name)
+                    break;
+                case "cuisine":
+                    name = item.MeubleNom;
+                    console.log("cuisine :" + name)
+                    break;
+                case "chambre":
+                    name = item.MeubleNom;
+                    console.log("chambre :" + name)
+                    break;
+                case "salle-de-bain":
+                    name = item.MeubleNom;
+                    console.log("salle de bain :" + name)
+                    break;
+                default:
+                    name = item.MeubleNom;
+                    console.log(name)
+            }
+
+            return (
+                < Product
+                    name={name}
+                    prix={item.Prix}
+                    image={item.Photo[0].photo1}
+                    room={item.PieceNom}
+                />
+            );
+        });
 
 
     return (
@@ -64,7 +85,8 @@ const Piece = (props) => {
             </div>
         </div>
     )
-}
+};
+
 
 
 export default Piece
