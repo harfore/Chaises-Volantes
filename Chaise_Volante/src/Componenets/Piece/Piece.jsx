@@ -70,6 +70,7 @@ const Piece = (props) => {
                     prix={item.Prix}
                     image={item.Photo[0].photo1}
                     room={item.PieceNom}
+                    id={item.id}
                 />
             );
         });
