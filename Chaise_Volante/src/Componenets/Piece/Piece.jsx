@@ -68,9 +68,8 @@ const Piece = (props) => {
                 < Product
                     name={name}
                     prix={item.Prix}
-                    img={item.Photo[0].photo1}
+                    image={item.Photo[0].photo1}
                     room={item.PieceNom}
-                    id={item.id}
                 />
             );
         });
@@ -83,7 +82,7 @@ const Piece = (props) => {
             </div>
             <div className='grid grid-cols-2 gap-x-4 h-full'>
 
-                <div className=' h-full col-span-2 md:col-span-2 rounded-lg'>
+                <div className=' h-full col-span-2 md:col-span-1 rounded-lg'>
                     <Carousel
                         containerClass="carousel-container"
                         itemClass="carousel-item"
@@ -95,7 +94,7 @@ const Piece = (props) => {
 
 
                 <h2 className=' text-center text-2xl font-serif m-20 t-m-30' style={{ fontFamily: 'Roslindale' }} >Découvrez notre selection de meubles pour une chambre confortable et élegante </h2>
-                <div className='bg-[url("Salon/salonCozy.jpeg")] bg-cover bg-center h-full rounded-lg mb-10 '>
+                <div className='bg-[url("Cuisine/cuisine.jpeg")] bg-cover bg-center h-full rounded-lg mb-10 '>
                     {/* <img  className="z-0 object-cover" src="Salon\salonCozy.jpeg"></img> */}
                     {/* <h4 className=' absolute text-center text-2xl font-serif m-20 t-m-30 sm:text-lg' style={{ fontFamily: 'Roslindale'}} ></h4> */}
                 </div>
