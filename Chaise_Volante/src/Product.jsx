@@ -14,9 +14,11 @@ function Product(props) {
       />
       <h2>{props.name}</h2>
       <p>{props.prix} €</p>
-      <Link to={`/product/${props.id}`}>
-        <p>Découvrir</p>
-      </Link>
+      <Link to={`/product/${props.id}`} style={{ color: 'black', textDecoration: 'none' }}>
+      <p className='bg-orange-300' style={{ width:'80%', padding: '5px', borderRadius: '5px', textAlign: 'center' }}>
+        Découvrir
+      </p>
+    </Link>
     </div>
   );
 }
