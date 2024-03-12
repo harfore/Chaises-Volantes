@@ -25,10 +25,6 @@ const ProductDetails = (props) => {
     setSelectedImage(imageSrc);
   };
 
-  const handleCloseImage = () => {
-    setSelectedImage(null);
-  };
-
   const handleAddToCart = () => {
     // Ajouter ici la logique pour ajouter le produit au panier
     alert("Le produit a été ajouté au panier !");
