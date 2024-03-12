@@ -18,7 +18,7 @@ async function getAllMeublesData() {
   try {
     // Récupération des données de la table 'Meuble'
     let { data, error } = await supabase
-    .from('Meuble').select('MeubleNom, Photo, Type, Prix');
+    .from('view_get_allmeubles').select('*');
     // Vérification s'il y a eu une erreur
     if (error) {
       // S'il y a une erreur, lance une exception avec un message d'erreur
@@ -41,31 +41,8 @@ async function getAllMeublesData() {
 async function getMeubleData(meubleId) {
     try{
         let {data, error} = await supabase
-        .from('Meuble').select('*').eq('id', meubleId)
+        .from('view_get_meubles').select('*').eq('id', meubleId)
         return data
-
-    // Cette requête SQL est à traduire en "langage Supabase" avec la DATA API. Il faudra que l'id du WHERE tout à la fin de la requête soit dynamique,
-    // en fonction du meuble cliqué.
-    //    SELECT
-    //     "Meuble"."MeubleNom",
-    //     "Meuble"."Photo",
-    //     "Meuble"."Type",
-    //     "Meuble"."Dimension",
-    //     "Meuble"."Prix",
-    //     "Meuble"."Description",
-    //     "Meuble"."Annee",
-    //     "Couleur"."CouleurNom",
-    //     "Matiere"."MatiereNom",
-    //     "Piece"."PieceNom"
-    //   FROM
-    //     "Meuble"
-    //     INNER JOIN "MeubleCouleurRelation" ON "Meuble".id = "MeubleCouleurRelation"."MatchMeubleID"
-    //     INNER JOIN "Couleur" ON "MeubleCouleurRelation"."MatchCouleurID" = "Couleur".id
-    //     INNER JOIN "MeubleMatiereRelation" ON "Meuble".id = "MeubleMatiereRelation"."MatchMeubleID"
-    //     INNER JOIN "Matiere" ON "MeubleMatiereRelation"."MatchMatiereID" = "Matiere".id
-    //     INNER JOIN "MeublePieceRelation" ON "Meuble".id = "MeublePieceRelation"."MatchMeubleID"
-    //     INNER JOIN "Piece" ON "MeublePieceRelation"."MatchPieceID" = "Piece".id
-    //   WHERE "Meuble".id = meubleId
       
     } catch (error) {
         console.error("Erreur lors de la récupération des données:", error.message);
@@ -89,7 +66,6 @@ app.get("/allmeubles", async (req, res) => {
 // Définition de la route racine ('/id') pour récupérer et renvoyer les données d'un seul meuble, en fonction de son id
 app.get("/meuble/:meubleid", async (req, res) => {
     const meubleId = req.params.meubleid
-    // res.status(200).json({test:"test"})
     const data = await getMeubleData(meubleId);
     res.status(200).json(data)
 })

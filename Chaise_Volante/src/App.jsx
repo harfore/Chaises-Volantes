@@ -23,7 +23,6 @@ function App() {
   return (
     <div className="m-5">
       <Header />
-      <MainChoice />
       <Text />
       <Filtre />
       <div className="App">
@@ -41,9 +40,6 @@ function App() {
           {product}
         </Carousel>
       </div>
-      <Salon />
-      <Cuisine />
-      <Chambre />
       <Piece categorie="salon" side="left" titre="titre" image="image" />
       <Piece categorie="chambre" side="right" titre="titre" image="image" />
       <Piece categorie="cuisine" side="left" titre="titre" image="image" />
