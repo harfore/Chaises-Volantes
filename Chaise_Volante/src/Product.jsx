@@ -9,7 +9,7 @@ function Product(props) {
     <div className='card' >
       <img
         className='product--image w-80 h-80 object-cover rounded-lg'
-        src={props.image}
+        src={props.img}
         alt="product image"
       />
       <h2>{props.name}</h2>

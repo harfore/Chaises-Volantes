@@ -18,6 +18,7 @@ function App() {
   const product = productData.map((item) => (
     <Product name={item.MeubleNom} img={item.Photo[0].photo1} prix={item.Prix} id={item.id} />
   ));
+  
   //A FAIRE: ajouter le composant SALLE DE BAIN. A vous de le faire comme vous voulez.
   // Le composant SALLE DE BAIN dois être placé dans cette dive en ordre d'apparition sur la page principale
   return (
