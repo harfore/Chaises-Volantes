@@ -62,7 +62,7 @@ const ProductDetails = (props) => {
         </div>
       </div>
 
-      <div className="w-1/3 p-4">
+      <div className=" p-4">
 
         {/* Détails du produit */}
         <h2 className="text-3xl font-semibold mb-2">{Furniture[0].MeubleNom}</h2>
