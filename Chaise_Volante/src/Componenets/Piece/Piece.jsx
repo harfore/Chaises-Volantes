@@ -49,6 +49,21 @@ const Piece = (props) => {
                     console.log(name)
             }
 
+            const getLayoutStyle = () => {
+                switch (room.toLowerCase()) {
+                    case "salon":
+                        return { flexDirection: "row-reverse" }; // Invert picture and description for salon
+                    case "chambre":
+                        return { flexDirection: "row" }; // Keep picture on the left for cuisine
+                    case "cuisine":
+                        return { flexDirection: "row-reverse" }; // Invert picture and description for chambre
+                    case "salle-de-bain":
+                        return { flexDirection: "row" }; // Keep picture on the left for salle-de-bain
+                    default:
+                        return { flexDirection: "row" }; // Default layout
+                }
+            };
+
             return (
                 < Product
                     name={name}
@@ -67,7 +82,7 @@ const Piece = (props) => {
             </div>
             <div className='grid grid-cols-2 gap-x-4 h-full'>
 
-                <div className=' h-full col-span-2 md:col-span-1 rounded-lg'>
+                <div className=' h-full col-span-2 md:col-span-2 rounded-lg'>
                     <Carousel
                         containerClass="carousel-container"
                         itemClass="carousel-item"
@@ -77,8 +92,9 @@ const Piece = (props) => {
                     </Carousel>
                 </div>
 
+
                 <h2 className=' text-center text-2xl font-serif m-20 t-m-30' style={{ fontFamily: 'Roslindale' }} >Découvrez notre selection de meubles pour une chambre confortable et élegante </h2>
-                <div className='bg-[url("Cuisine/cuisine.jpeg")] bg-cover bg-center h-full rounded-lg mb-10 '>
+                <div className='bg-[url("Salon/salonCozy.jpeg")] bg-cover bg-center h-full rounded-lg mb-10 '>
                     {/* <img  className="z-0 object-cover" src="Salon\salonCozy.jpeg"></img> */}
                     {/* <h4 className=' absolute text-center text-2xl font-serif m-20 t-m-30 sm:text-lg' style={{ fontFamily: 'Roslindale'}} ></h4> */}
                 </div>
