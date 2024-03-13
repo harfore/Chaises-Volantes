@@ -49,7 +49,7 @@ const Piece = (props) => {
                     console.log(name)
             }
 
-            const getLayoutStyle = () => {
+            /* const getLayoutStyle = () => {
                 switch (room.toLowerCase()) {
                     case "salon":
                         return { flexDirection: "row-reverse" }; // Invert picture and description for salon
@@ -62,7 +62,7 @@ const Piece = (props) => {
                     default:
                         return { flexDirection: "row" }; // Default layout
                 }
-            };
+            }; */
 
             return (
                 < Product
@@ -76,10 +76,10 @@ const Piece = (props) => {
         });
 
     const phrasesByCategory = {
-        "salon":"Découvrez notre selection de meubles pour un salon au charme intemporel",
-        "cuisine":"Découvrez notre selection de meubles pour une cuisine épurée et fonctionnelle",
-        "chambre":"Découvrez notre selection de meubles pour une chambre confortable et élegante",
-        "salle-de-bain":"Découvrez notre selection de meubles pour une salle de bain épurée et élégante"
+        "salon": "Découvrez notre selection de meubles pour un salon au charme intemporel",
+        "cuisine": "Découvrez notre selection de meubles pour une cuisine épurée et fonctionnelle",
+        "chambre": "Découvrez notre selection de meubles pour une chambre confortable et élegante",
+        "salle-de-bain": "Découvrez notre selection de meubles pour une salle de bain épurée et élégante"
     }
 
     let phrases
