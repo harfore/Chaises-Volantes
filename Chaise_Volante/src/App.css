@@ -2,4 +2,5 @@
 .carousel-container button {
     background-color: rgb(0, 0, 0); /* Changer la couleur de fond */
     color: white; /* Changer la couleur du texte */
+    z-index: auto;
 }
