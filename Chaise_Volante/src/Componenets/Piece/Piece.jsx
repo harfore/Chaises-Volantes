@@ -75,18 +75,19 @@ const Piece = (props) => {
             );
         });
 
+
     const phrasesByCategory = {
         "salon": "Découvrez notre selection de meubles pour un salon au charme intemporel",
         "cuisine": "Découvrez notre selection de meubles pour une cuisine épurée et fonctionnelle",
         "chambre": "Découvrez notre selection de meubles pour une chambre confortable et élegante",
-        "salle-de-bain": "Découvrez notre selection de meubles pour une salle de bain épurée et élégante"
+        "salle de bain": "Découvrez notre selection de meubles pour une salle de bain épurée et élégante"
     }
 
     let phrases
     if (props.categorie === "salon") phrases = phrasesByCategory.salon
     else if (props.categorie === "cuisine") phrases = phrasesByCategory.cuisine
     else if (props.categorie === "chambre") phrases = phrasesByCategory.chambre
-    else if (props.categorie === "salle-de-bain") phrases = phrasesByCategory['salle-de-bain']
+    else if (props.categorie === "salle de bain") phrases = phrasesByCategory['salle de bain']
 
 
     return (
