@@ -40,7 +40,7 @@ const Piece = (props) => {
                     name = item.MeubleNom;
                     console.log("chambre :" + name)
                     break;
-                case "salle-de-bain":
+                case "salle de bain":
                     name = item.MeubleNom;
                     console.log("salle de bain :" + name)
                     break;
@@ -108,10 +108,8 @@ const Piece = (props) => {
 
 
                 <h2 className=' text-center text-2xl font-serif m-20 t-m-30' style={{ fontFamily: 'Roslindale' }} >{phrases} </h2>
-                <div className='bg-[url("Cuisine/cuisine.jpeg")] bg-cover bg-center h-full rounded-lg mb-10 '>
-                    {/* <img  className="z-0 object-cover" src="Salon\salonCozy.jpeg"></img> */}
-                    {/* <h4 className=' absolute text-center text-2xl font-serif m-20 t-m-30 sm:text-lg' style={{ fontFamily: 'Roslindale'}} ></h4> */}
-                </div>
+                {/* <img  className="z-0 object-cover" src="Salon\salonCozy.jpeg"></img> */}
+                {/* <h4 className=' absolute text-center text-2xl font-serif m-20 t-m-30 sm:text-lg' style={{ fontFamily: 'Roslindale'}} ></h4> */}
             </div>
         </div>
     )
