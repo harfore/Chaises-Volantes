@@ -68,12 +68,25 @@ const Piece = (props) => {
                 < Product
                     name={name}
                     prix={item.Prix}
-                    image={item.Photo[0].photo1}
+                    img={item.Photo[0].photo1}
                     room={item.PieceNom}
                     id={item.id}
                 />
             );
         });
+
+    const phrasesByCategory = {
+        "salon":"Découvrez notre selection de meubles pour un salon au charme intemporel",
+        "cuisine":"Découvrez notre selection de meubles pour une cuisine épurée et fonctionnelle",
+        "chambre":"Découvrez notre selection de meubles pour une chambre confortable et élegante",
+        "salle-de-bain":"Découvrez notre selection de meubles pour une salle de bain épurée et élégante"
+    }
+
+    let phrases
+    if (props.categorie === "salon") phrases = phrasesByCategory.salon
+    else if (props.categorie === "cuisine") phrases = phrasesByCategory.cuisine
+    else if (props.categorie === "chambre") phrases = phrasesByCategory.chambre
+    else if (props.categorie === "salle-de-bain") phrases = phrasesByCategory['salle-de-bain']
 
 
     return (
@@ -94,7 +107,7 @@ const Piece = (props) => {
                 </div>
 
 
-                <h2 className=' text-center text-2xl font-serif m-20 t-m-30' style={{ fontFamily: 'Roslindale' }} >Découvrez notre selection de meubles pour une chambre confortable et élegante </h2>
+                <h2 className=' text-center text-2xl font-serif m-20 t-m-30' style={{ fontFamily: 'Roslindale' }} >{phrases} </h2>
                 <div className='bg-[url("Cuisine/cuisine.jpeg")] bg-cover bg-center h-full rounded-lg mb-10 '>
                     {/* <img  className="z-0 object-cover" src="Salon\salonCozy.jpeg"></img> */}
                     {/* <h4 className=' absolute text-center text-2xl font-serif m-20 t-m-30 sm:text-lg' style={{ fontFamily: 'Roslindale'}} ></h4> */}
