@@ -65,24 +65,23 @@ const ProductDetails = (props) => {
 
           <div className=" p-4">
 
-            {/* Détails du produit */}
-            <h2 className="text-3xl font-semibold mb-2">{Furniture[0].MeubleNom}</h2>
-            <p className="text-gray-700 mb-4 italic">{Furniture[0].Description}</p>
-            <p className="text-2xl font-semibold tex-gray-800 mb-2 mt-20">Matière:</p>
-            <p className="text-xl text-gray-800 mb-2">{Furniture.material}</p>
-            <p className="text-2xl font-semibold tex-gray-800 mb-2 mt-20">Couleur:</p>
-            <p className="text-xl text-gray-800 mb-2">{Furniture.color}</p>
-            <p className="text-2xl font-semibold text-gray-800 mb-2">Dimension:</p>
-            <p className="text-xl text-gray-800 mb-2">{Furniture[0].Dimension}</p>
-            <p className="text-2xl font-semibold text-gray-800 mb-2">Prix</p>
-            <p className="text-xl text-gray-800 mb-4">{Furniture[0].Prix} €</p>
-
-            {/* Bouton Ajouter au panier */}
-            <button
-              className="absolute bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-[35px] ml-50 animate-pulse"
-              onClick={handleAddToCart}>
-              Ajouter au panier
-            </button>
+        {/* Détails du produit */}
+        <h2 className="text-3xl font-semibold mb-2">{Furniture[0].MeubleNom}</h2>
+        <p className="text-gray-700 mb-4 italic">{Furniture[0].Description}</p>
+        <p className="text-2xl font-semibold tex-gray-800 mb-2">Matière:</p>
+        <p className="text-xl text-gray-800 mb-2">{Furniture[0].MatiereNom}</p>
+        <p className="text-2xl font-semibold tex-gray-800 mb-2">Couleur:</p>
+        <p className="text-xl text-gray-800 mb-2">{Furniture[0].CouleurNom}</p>
+        <p className="text-2xl font-semibold text-gray-800 mb-2">Dimension:</p>
+        <p className="text-xl text-gray-800 mb-2">{Furniture[0].Dimension}</p>
+        <p className="text-2xl font-semibold text-gray-800 mb-2">Prix</p>
+        <p className="text-xl text-gray-800 mb-4">{Furniture[0].Prix} €</p>
+        {/* Bouton Ajouter au panier */}
+        <button
+          className="absolute bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-[35px] ml-50 animate-pulse"
+          onClick={handleAddToCart}>
+          Ajouter au panier
+        </button>
           </div>
         </div>
       </div>
