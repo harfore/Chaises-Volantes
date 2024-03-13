@@ -71,10 +71,10 @@ const FilterOption = ({ label, options, onSelect }) => {
 
 // Options de filtre par défaut
 const options = {
-  prices: ["Croissant", "Décroissant"],
-  colors: ["Noir", "Bleu", "Marron", "Blanc", "Orange"],
-  types: ["Canapés", "Chaise", "Lit", "Etagère", "Table"],
-  materials: ["Bois", "Métal", "Velour"],
+  Prix: ["Croissant", "Décroissant"],
+  Couleurs: ["Noir", "Bleu", "Marron", "Blanc", "Orange", "Gris"],
+  Types: ["Canapé", "Chaise", "Lit", "Etagère", "Table"],
+  Materiels: ["Bois", "Métal", "Velour", "Verre"],
 };
 
 // Composant Filtre
