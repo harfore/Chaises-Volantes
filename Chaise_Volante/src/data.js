@@ -24,7 +24,7 @@ export const responsive = {
 // Ps: les images des produits en vent sont dans le folder "photos" (src-assets-photos). A FAIRE: trouver des images produits pour la salle bain
 
 const getAllData = async () => {
-  const response = await fetch("http://localhost:3000/allmeubles");
+  const response = await fetch("https://plateforme-vente-de-meubles-leschaisesvolantes.vercel.app/allmeubles");
   const data = await response.json();
   console.log(data);
   return data;
@@ -394,7 +394,7 @@ export const productData = await getAllData();
 
 
 export const getSingleFurniture = async (meubleID) => {
-  const response = await fetch(`http://localhost:3000/meuble/${meubleID}`)
+  const response = await fetch(`https://plateforme-vente-de-meubles-leschaisesvolantes.vercel.app/meuble/${meubleID}`)
   const data = await response.json()
   console.log(data)
   return data
