@@ -70,10 +70,6 @@ app.get("/meuble/:meubleid", async (req, res) => {
     res.status(200).json(data)
 })
 
-app.use('/', (req, res) => {
-  res.send('Serveur is running')
-})
-
 // Démarrage du serveur Express sur le port spécifié
 app.listen(process.env.PORT || 3000)
 // app.listen(port, () => {
