@@ -8,7 +8,7 @@ const supabaseKey = process.env.SUPABASE_KEY // supabaseKey a été déplacé da
 
 // Création de l'application Express
 const app = express();
-const port = 3000; // Port sur lequel le serveur écoutera les requêtes entrantes
+// const port = 3000; // Port sur lequel le serveur écoutera les requêtes entrantes
 
 // Création du client Supabase en utilisant l'URL et la clé d'API
 const supabase = createClient(supabaseUrl, supabaseKey);
@@ -71,6 +71,7 @@ app.get("/meuble/:meubleid", async (req, res) => {
 })
 
 // Démarrage du serveur Express sur le port spécifié
-app.listen(port, () => {
-  console.log(`Serveur démarré sur http://localhost:${port}`);
-});
+app.listen(process.env.PORT || 3000)
+// app.listen(port, () => {
+//   console.log(`Serveur démarré sur http://localhost:${port}`);
+// });
