@@ -2,15 +2,15 @@
 const express = require("express"); // Pour créer le serveur Express
 const cors = require("cors"); // Pour activer CORS
 const { createClient } = require("@supabase/supabase-js"); // Pour créer le client Supabase
+require('dotenv').config() // Dotenv sert à créer des variables d'environnement
+const supabaseUrl = process.env.SUPABASE_URL // supabaseUrl a été déplacé dans le fichier .env
+const supabaseKey = process.env.SUPABASE_KEY // supabaseKey a été déplacé dans le fichier .env
 
 // Création de l'application Express
 const app = express();
 const port = 3000; // Port sur lequel le serveur écoutera les requêtes entrantes
 
 // Création du client Supabase en utilisant l'URL et la clé d'API
-const supabaseUrl = "https://xucoxvobepvmmiloebkv.supabase.co";
-const supabaseKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh1Y294dm9iZXB2bW1pbG9lYmt2Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcwOTU2NDU3MiwiZXhwIjoyMDI1MTQwNTcyfQ.D2rN0DqvZBZa2RQpgEmQ04jfMGsw_ZCQfIH3umjMJSs";
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Fonction asynchrone pour récupérer les données de la table 'Meuble' depuis Supabase
