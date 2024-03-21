@@ -1,19 +1,19 @@
 import React from "react";
+import { useLoaderData } from "react-router-dom";
 import Header from "./Componenets/Header/Header";
 import Footer from "./Componenets/Footer/Footer";
 import Filtre from "./Componenets/Filtre/Filtre";
 import Text from "./Componenets/Text/Text";
+import Piece from "./Componenets/Piece/Piece";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { getAllData, responsive } from "./data";
+import { responsive } from "./data";
 import Product from "./Product";
-import Piece from "./Componenets/Piece/Piece";
 import './App.css';
 //import PresentationProduit from './Componenets/PresentationProduit/PresentationProduit';
 
-const productData = await getAllData()
-
 const App = () => {
+  const productData = useLoaderData()
   const product = productData.map((item) => (
     <Product name={item.MeubleNom} img={item.Photo[0].photo1} prix={item.Prix} id={item.id} />
   ));
@@ -39,10 +39,10 @@ const App = () => {
           {product}
         </Carousel>
       </div>
-      <Piece categorie="salon" side="left" titre="titre" image="image" />
-      <Piece categorie="chambre" side="right" titre="titre" image="image" />
-      <Piece categorie="cuisine" side="left" titre="titre" image="image" />
-      <Piece categorie="salle de bain" side="right" titre="titre" image="image" />
+      <Piece productData={productData} categorie="salon" side="left" titre="titre" image="image" />
+      <Piece productData={productData} categorie="chambre" side="right" titre="titre" image="image" />
+      <Piece productData={productData} categorie="cuisine" side="left" titre="titre" image="image" />
+      <Piece productData={productData} categorie="salle de bain" side="right" titre="titre" image="image" />
       <Footer />
     </div>
   );

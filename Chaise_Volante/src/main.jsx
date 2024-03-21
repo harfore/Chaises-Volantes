@@ -2,17 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.jsx';
 import PresentationProduit from './Componenets/PresentationProduit/PresentationProduit.jsx';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
+import { getAllData, getSingleFurniture } from './data.js';
 
-ReactDOM.render(
+const router = createBrowserRouter([
+  {
+    element:<App />,
+    path:"/",
+    loader:getAllData
+  },
+  {
+    element:<PresentationProduit />,
+    path:"/product/:productId",
+    loader:getSingleFurniture
+  }
+]);
+
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Router>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/product/:productId" element={<PresentationProduit />} />
-      </Routes>
-    </Router>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+    <RouterProvider router={router} />
+  </React.StrictMode>
+)

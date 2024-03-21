@@ -1,9 +1,6 @@
 import React from 'react'
 import Carousel from 'react-multi-carousel'
 import Product from '../../Product'
-import { getAllData } from '../../data'
-
-const productData = await getAllData();
 
 const Piece = (props) => {
     const responsive = {
@@ -25,30 +22,25 @@ const Piece = (props) => {
         }
     };
 
-    const product = productData
+    const product = props.productData
         .filter(item => props.categorie.toLowerCase() === item.PieceNom.toLowerCase())
         .map((item) => {
             let name = item.MeubleNom;
             switch (props.categorie.toLowerCase()) {
                 case "salon":
                     name = item.MeubleNom;
-                    console.log("salon :" + name)
                     break;
                 case "cuisine":
                     name = item.MeubleNom;
-                    console.log("cuisine :" + name)
                     break;
                 case "chambre":
                     name = item.MeubleNom;
-                    console.log("chambre :" + name)
                     break;
                 case "salle de bain":
                     name = item.MeubleNom;
-                    console.log("salle de bain :" + name)
                     break;
                 default:
                     name = item.MeubleNom;
-                    console.log(name)
             }
 
             /* const getLayoutStyle = () => {
