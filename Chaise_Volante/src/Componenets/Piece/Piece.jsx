@@ -1,7 +1,9 @@
 import React from 'react'
 import Carousel from 'react-multi-carousel'
 import Product from '../../Product'
-import { productData } from '../../data'
+import { getAllData } from '../../data'
+
+const productData = await getAllData();
 
 const Piece = (props) => {
     const responsive = {
@@ -75,7 +77,6 @@ const Piece = (props) => {
             );
         });
 
-
     const phrasesByCategory = {
         "salon": "Découvrez notre selection de meubles pour un salon au charme intemporel",
         "cuisine": "Découvrez notre selection de meubles pour une cuisine épurée et fonctionnelle",
@@ -88,7 +89,6 @@ const Piece = (props) => {
     else if (props.categorie === "cuisine") phrases = phrasesByCategory.cuisine
     else if (props.categorie === "chambre") phrases = phrasesByCategory.chambre
     else if (props.categorie === "salle de bain") phrases = phrasesByCategory['salle de bain']
-
 
     return (
         <div>
@@ -106,7 +106,6 @@ const Piece = (props) => {
                         {product}
                     </Carousel>
                 </div>
-
 
                 <h2 className=' text-center text-2xl font-serif m-20 t-m-30' style={{ fontFamily: 'Roslindale' }} >{phrases} </h2>
                 {/* <img  className="z-0 object-cover" src="Salon\salonCozy.jpeg"></img> */}

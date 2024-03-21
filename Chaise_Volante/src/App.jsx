@@ -5,13 +5,15 @@ import Filtre from "./Componenets/Filtre/Filtre";
 import Text from "./Componenets/Text/Text";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { productData, responsive } from "./data";
+import { getAllData, responsive } from "./data";
 import Product from "./Product";
 import Piece from "./Componenets/Piece/Piece";
 import './App.css';
 //import PresentationProduit from './Componenets/PresentationProduit/PresentationProduit';
 
-function App() {
+const productData = await getAllData()
+
+const App = () => {
   const product = productData.map((item) => (
     <Product name={item.MeubleNom} img={item.Photo[0].photo1} prix={item.Prix} id={item.id} />
   ));
