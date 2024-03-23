@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 //C'est la partie du Carousel avec la simple carte image, nom du produit et le bouton DECOUVRE. Ce button correspond au button classique payer mais vous pouvez le changer
 // A FAIRE: probablement changer le button DECOUVRE, et rajouter une ligne pour le prix
 function Product(props) {
+  console.log(props.img)
   return (
 
     <div className='card' >
