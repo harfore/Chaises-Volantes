@@ -49,11 +49,16 @@ const ProductDetails = (props) => {
 		.quality('auto')
 		.toURL();
 
-  	// const littleImg = cld
-		// .image(photo)
-		// .format('auto')
-		// .quality('auto')
-		// .toURL();
+    
+    const getLittleImg = (photo) => {
+      const littleImg = cld
+      .image(photo)
+      .format('auto')
+      .quality('auto')
+      .toURL();
+
+      return littleImg
+    }
 
 
 
@@ -75,7 +80,7 @@ const ProductDetails = (props) => {
               {Furniture[0].Photo.map((photo, index) => (
                 <img
                   key={index}
-                  src={Object.values(photo)[0]}
+                  src={getLittleImg(Object.values(photo)[0])}
                   alt={`Photo ${index + 1}`}
                   className="w-1/3 p-2 cursor-pointer hover:shadow-lg cursor-zoom-in transition duration-300 hover:scale-110"
                   onClick={() => handleImageClick(Object.values(photo)[0])}
