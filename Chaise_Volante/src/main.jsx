@@ -5,6 +5,9 @@ import PresentationProduit from './Componenets/PresentationProduit/PresentationP
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import { getAllData, getSingleFurniture } from './data.js';
+import {Cloudinary} from '@cloudinary/url-gen';
+
+
 
 const router = createBrowserRouter([
   {
