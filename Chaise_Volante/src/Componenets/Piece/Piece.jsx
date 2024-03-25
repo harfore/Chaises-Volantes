@@ -3,6 +3,7 @@ import Carousel from 'react-multi-carousel'
 import Product from '../../Product'
 
 const Piece = (props) => {
+
     const responsive = {
         superLargeDesktop: {
             breakpoint: { max: 4000, min: 3000 },
@@ -57,7 +58,7 @@ const Piece = (props) => {
                         return { flexDirection: "row" }; // Default layout
                 }
             }; */
-
+        
             return (
                 < Product
                     name={name}

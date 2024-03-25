@@ -3,7 +3,8 @@ import { IoClose } from "react-icons/io5";
 import { getSingleFurniture } from "/src/data";
 import { useParams } from 'react-router-dom';
 import Header from '../Header/Header.jsx'
-import Footer from '../Footer/Footer.jsx'
+import Footer from '../Footer/Footer.jsx';
+import {Cloudinary} from '@cloudinary/url-gen';
 
 const ProductDetails = (props) => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -36,6 +37,26 @@ const ProductDetails = (props) => {
     return <div>Loading...</div>;
   }
 
+  const cld = new Cloudinary({
+		cloud: {
+			cloudName: 'dcgmvmf04'
+		}
+	});
+
+	const bigImg = cld
+		.image(Furniture[0].Photo[0].photo1)
+		.format('auto')
+		.quality('auto')
+		.toURL();
+
+  	// const littleImg = cld
+		// .image(photo)
+		// .format('auto')
+		// .quality('auto')
+		// .toURL();
+
+
+
   return (
     <div className="flex flex-col h-screen">
       <Header />
@@ -44,7 +65,7 @@ const ProductDetails = (props) => {
           <div className="w-2/3 p-4 max-w-xl ">
             {/* Grande photo du produit */}
             <img
-              src={selectedImage || Furniture[0].Photo[0].photo1}
+              src={selectedImage || bigImg}
               alt="Grande photo du produit"
               className="max-h-[400px] shadow-lg shadow hover:shadow-lg"
             />
