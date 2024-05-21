@@ -8,14 +8,14 @@ A collaborative student project, <i>Chaises Volantes</i> was made over the cours
 
 We experimented with Express, PostgreSQL and Supabase to support the back-end of the project, while using React and Node.js to set up the front-end.
 
-A carousel with the newest items on display is available upon opening the home page.<br>
+A carousel with the newest items on display is available upon opening the home page.<br><br>
 ![Home Page](./Chaise_Volante/img/HOME_README.png)
 
-When scrolling down, each room gets a dedicated section with specific furniture to help fill the space according to the client's taste.<br>
-![Living Room](./Chaise_Volante/img/HOME_README.png)<br>
+When scrolling down, each room gets a dedicated section with specific furniture to help fill the space according to the client's taste.<br><br>
+![Living Room](./Chaise_Volante/img/HOME_README.png)<br><br>
 ![Bathroom](./Chaise_Volante/img/HOME_README.png)
 
-See a product you like? Click on it to find out more.<br>
+See a product you like? Click on it to find out more.<br><br>
 ![Product Page](./Chaise_Volante/img/PAGE_PRODUIT_README.png)
 
 Collaborators: @chloetoma, @felikarina, @Hanaevernon, @StevanyF, @theomarci, and @stoyots
