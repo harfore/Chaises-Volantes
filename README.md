@@ -2,7 +2,7 @@
 
 Looking for some new furniture? Browse through a myriad of items to furnish all your rooms and decorate an elegant home.
 
-A collaborative student project, <i>Chaises Volantes</i> was made over the course of 10 days by 4 people working on the front-end of the website, and 4 others on the back-end. 
+A collaborative student project, <i>Chaises Volantes</i> was made over the course of 10 days by half the team working on the front-end of the website, and the other half on the back-end. 
 <br>At halfpoint, we switched roles in order for members to be involved in both sides. Each coder uses their own methods, thus offering us an opportunity to learn how to build upon code that's already started.
 <br>We made it a point to meet daily as a group to discuss advancements, goals and difficulties some might have.
 
